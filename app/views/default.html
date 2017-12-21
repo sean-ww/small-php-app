@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>small-php-app</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" href="assets/styles/styles.css?v=0.1" type="text/css">
+</head>
+
+<body>
+	<div class="layout">
+		<div class="contentContainer">
+			<div class="contentInside">
+				<div class="grid-container">
+					<div class="grid-row space-top-8 space-bottom-3">
+						{% include 'components/header.html' %}
+						{% if template and template != '' %}
+							{% if template.url and template.url != '' %}
+								{% include ''~template.url~'' with template %}
+							{% else %}
+								{{ template }}
+							{% endif %}
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/js/vendor/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="assets/js/app.js?v0.1"></script>
+</body>
+
+</html>

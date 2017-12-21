@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+
+	# Turn on the engine:
+	RewriteEngine on
+
+	# Send requests that are not for files to index.php
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^ index.php [QSA,L]
+
+</IfModule>

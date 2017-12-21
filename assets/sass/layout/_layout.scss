@@ -1,0 +1,98 @@
+.layout {
+    height: 100%;
+}
+
+/* Main Containers */
+.contentContainer {
+    min-height: 100%;
+    width: 94%;
+    max-width: $main_container_max_width;
+    min-width: $main_container_min_width;
+    margin: 0 auto;
+    position: relative;
+    background: #ffffff;
+}
+
+.contentInside {
+    padding: 20px 20px 70px;
+}
+
+.content {
+    margin-top: 10px;
+    padding: 10px 10px 45px;
+    position: relative;
+    overflow: visible;
+}
+
+/* Page split */
+.left {
+    width: 49.5%;
+    float: left;
+    padding-right: 0.5%;
+    clear: right;
+}
+
+.left .left,
+.right .left,
+.verticalTab .left {
+    clear: none;
+}
+
+.right {
+    width: 49.5%;
+    float: right;
+    padding-left: 0.5%;
+}
+
+/* Clear Fix */
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive Design */
+@media all and (max-width: 10px + $main_container_min_width) {
+    .content,
+    .contentContainer {
+        min-width: 0px !important;
+    }
+
+    .contentContainer {
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 1100px) {
+    .left .left,
+    .left .right,
+    .right .left,
+    .right .right {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .left,
+    .right {
+        float: none;
+        width: 100%;
+    }
+
+    .contentInside {
+        padding-bottom: 86px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .contentInside {
+        padding-bottom: 102px;
+    }
+}
+
+@media all and (max-width: 460px) {
+    .contentInside {
+        padding-bottom: 118px;
+    }
+}
