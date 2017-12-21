@@ -55,4 +55,16 @@ class SlugsController
         }
         return $this->slugsModel->createSlug($url);
     }
+
+    /**
+     * Fetch the url for a given slug
+     *
+     * @param string $slug The slug to be fetched.
+     *
+     * @return null|string The url, or null.
+     */
+    public function fetchUrl($slug)
+    {
+        return $this->slugsModel->fetchUrl($slug);
+    }
 }

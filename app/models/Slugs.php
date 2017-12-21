@@ -98,4 +98,22 @@ class Slugs extends Eloquent
         $randomValue = substr($id, 0, 5) . $randomString;
         return $randomValue;
     }
+
+    /**
+     * Fetch the url for a given slug
+     *
+     * @param string $slug The slug to be fetched.
+     *
+     * @return null|string The url, or null.
+     */
+    public function fetchUrl($slug)
+    {
+        $slugModel = $this->where('slug', $slug);
+        if ($slugModel->exists()) {
+            $dataArray = $slugModel->get()->first()->toArray();
+            return $dataArray['long_url'];
+        }
+
+        return null;
+    }
 }

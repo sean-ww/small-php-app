@@ -26,6 +26,12 @@ $app->post('/', function () use ($app, $slugsController) {
 });
 
 // View url
-//$app->get('/l/:slug', function () use ($app) {
-//
-//});
+$app->get('/l/:slug', function ($slug) use ($slugsController) {
+    $url = $slugsController->fetchUrl($slug);
+    if ($url) {
+        header('location: ' . $url);
+        exit();
+    } else {
+        echo 'Your link could not be found';
+    }
+});
