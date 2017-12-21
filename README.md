@@ -20,3 +20,4 @@ php vendor/bin/phinx migrate -c app/config.phinx.php
 ### Functionality
 
 * As a user I want to enter a destination url and receive a shortened url in return
+* As a user I want to be redirected to the destination url after visiting the shortened url
